@@ -14,6 +14,7 @@
 		39740F8B1DE605AE00976E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39740F891DE605AE00976E57 /* LaunchScreen.storyboard */; };
 		39740F961DE605AE00976E57 /* SampleCarthageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39740F951DE605AE00976E57 /* SampleCarthageTests.swift */; };
 		39740FA11DE605AE00976E57 /* SampleCarthageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39740FA01DE605AE00976E57 /* SampleCarthageUITests.swift */; };
+		39740FB11DE6097E00976E57 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39740FB01DE6097E00976E57 /* SVProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		39740F9C1DE605AE00976E57 /* SampleCarthageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleCarthageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39740FA01DE605AE00976E57 /* SampleCarthageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCarthageUITests.swift; sourceTree = "<group>"; };
 		39740FA21DE605AE00976E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39740FB01DE6097E00976E57 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39740FB11DE6097E00976E57 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				39740F941DE605AE00976E57 /* SampleCarthageTests */,
 				39740F9F1DE605AE00976E57 /* SampleCarthageUITests */,
 				39740F7E1DE605AE00976E57 /* Products */,
+				39740FAF1DE6097E00976E57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +129,14 @@
 			path = SampleCarthageUITests;
 			sourceTree = "<group>";
 		};
+		39740FAF1DE6097E00976E57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39740FB01DE6097E00976E57 /* SVProgressHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +147,7 @@
 				39740F791DE605AE00976E57 /* Sources */,
 				39740F7A1DE605AE00976E57 /* Frameworks */,
 				39740F7B1DE605AE00976E57 /* Resources */,
+				39740FAE1DE6085C00976E57 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +269,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39740FAE1DE6085C00976E57 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39740F791DE605AE00976E57 /* Sources */ = {
@@ -414,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SLHYE76MHB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SampleCarthage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.shinoki.SampleCarthage;
@@ -427,6 +461,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SLHYE76MHB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SampleCarthage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.shinoki.SampleCarthage;
